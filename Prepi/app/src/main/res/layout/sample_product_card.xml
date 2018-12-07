@@ -26,6 +26,8 @@
             android:id="@+id/buy_Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="Buy" />
+            tools:text="FFF"
+            android:textColor="#c7a6c2"
+            android:textStyle="bold"/>
 
 </LinearLayout>

@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.support.annotation.StyleableRes
+import android.util.Log
 import android.widget.Button
 
 
@@ -25,16 +26,12 @@ class ProductCard(context: Context?, attrs: AttributeSet?) :
     internal var index1 = 1
     @StyleableRes
     internal var index2 = 2
+    @StyleableRes
+    internal var index3 = 3
 
     internal var artistText: TextView? = null
     internal var trackText: TextView? = null
     internal var buyButton: Button? = null
-
-//    var button: CharSequence
-//        get() = buyButton!!.getText()
-//        set(value) {
-//            buyButton!!.setText(value)
-//        }
 
     init {
         if (context != null && attrs != null) {
@@ -46,17 +43,20 @@ class ProductCard(context: Context?, attrs: AttributeSet?) :
         View.inflate(context, R.layout.sample_product_card, this)
 
         val sets = intArrayOf(R.attr.artistText, R.attr.trackText, R.attr.buyButton)
+//        Log.i("Prepiappp", sets)
         val typedArray = context.obtainStyledAttributes(attrs, sets)
         val artist = typedArray.getText(index0)
         val track = typedArray.getText(index1)
         val buyButton = typedArray.getText(index2)
+//        val track2 = typedArray.getText(index3)
         typedArray.recycle()
 
         initComponents()
 
         setArtistText(artist)
         setTrackText(track)
-        setButton(buyButton)
+        Log.i("Prepiappp", artist.toString())
+//        setBuyButton(buyButton)
     }
 
     private fun initComponents() {
@@ -68,11 +68,11 @@ class ProductCard(context: Context?, attrs: AttributeSet?) :
     }
 
 
-    fun getButton(): CharSequence {
+    fun getBuyButton(): CharSequence {
         return buyButton!!.text
     }
 
-    fun setButton(value: CharSequence) {
+    fun setBuyButton(value: CharSequence) {
         buyButton?.text = value
     }
 
