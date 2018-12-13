@@ -2,6 +2,9 @@ package prepi.com.prepi
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ArrayAdapter
+import kotlinx.android.synthetic.main.activity_edit_product.*
+
 
 class EditProduct : AppCompatActivity() {
 

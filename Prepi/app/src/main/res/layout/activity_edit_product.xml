@@ -35,17 +35,73 @@
                 app:layout_constraintVertical_bias="1.0">
         <LinearLayout android:layout_width="match_parent"
                       android:layout_height="wrap_content"
+                      android:paddingEnd="15dp"
+                      android:paddingStart="15dp"
                       android:orientation="vertical">
-            <ImageView android:layout_width="200dp"
-                       android:layout_height="180dp"
-                       android:src="@drawable/woman"
-                       android:contentDescription="@string/app_name"
+            <TextView android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:text="Editar as informações"
+                      android:background="#FAFBFC"
+                      android:paddingBottom="5dp"
+                      android:layout_marginTop="20dp"
+                      android:textAppearance="@style/Prepi.Text.Title"
             />
-            <ImageView android:layout_width="200dp"
-                       android:layout_height="180dp"
-                       android:src="@drawable/woman"
-                       android:contentDescription="@string/app_name"
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_marginTop="10dp"
+                          android:layout_marginBottom="30dp">
+                <ImageView android:layout_width="120dp"
+                           android:layout_height="100dp"
+                           android:src="@drawable/woman"
+                           android:contentDescription="@string/app_name"
+                />
+                <EditText android:layout_width="0dp"
+                          android:hint="Escreva uma descrição para a peça no seu site…"
+                          android:layout_height="match_parent"
+                          android:layout_weight="1"
+                          android:layout_marginStart="5dp"
+                          android:gravity="top"
+                          android:maxLines="4"
+                          android:scrollbars="vertical"
+                          android:scrollbarStyle="insideInset"
+                          android:overScrollMode="always"
+                          android:background="@android:color/transparent"
+                          android:inputType="textMultiLine|textAutoComplete|textAutoCorrect|textLongMessage"
+                />
+            </LinearLayout>
+            <View android:layout_width="match_parent"
+                  android:background="#000000"
+                  android:layout_height="1dp"/>
+
+            <prepi.com.prepi.components.HorizontalInputTextWithLabel
+                    android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     app:label="Nome da peça: "
+                    app:placeholder="Digite o nome da peça"
             />
+
+            <prepi.com.prepi.components.HorizontalInputTextWithLabel
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:label="Digite o valor da peça: "
+                    app:placeholder="R$ 0,00"
+            />
+
+            <prepi.com.prepi.components.HorizontalInputTextWithLabel
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:label="Caso em promoção digite o valor: "
+                    app:placeholder="R$ 0,00"
+            />
+
+            <prepi.com.prepi.components.HorizontalInputTextWithLabel
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:label="Qual tipo de roupa é essa: "
+                    app:dropdown_value="true"
+                    app:dropdown_itens="@array/dropdown_tipo_peca"
+            />
+
             <ImageView android:layout_width="200dp"
                        android:layout_height="180dp"
                        android:src="@drawable/woman"

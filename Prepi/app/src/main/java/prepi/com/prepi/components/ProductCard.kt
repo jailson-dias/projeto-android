@@ -1,4 +1,4 @@
-package prepi.com.prepi
+package prepi.com.prepi.components
 
 import android.content.Context
 import android.util.AttributeSet
@@ -8,6 +8,7 @@ import android.widget.TextView
 import android.support.annotation.StyleableRes
 import android.util.Log
 import android.widget.Button
+import prepi.com.prepi.R
 
 
 /**
@@ -42,7 +43,11 @@ class ProductCard(context: Context?, attrs: AttributeSet?) :
     private fun init(context: Context, attrs: AttributeSet) {
         View.inflate(context, R.layout.sample_product_card, this)
 
-        val sets = intArrayOf(R.attr.artistText, R.attr.trackText, R.attr.buyButton)
+        val sets = intArrayOf(
+            R.attr.artistText,
+            R.attr.trackText,
+            R.attr.buyButton
+        )
 //        Log.i("Prepiappp", sets)
         val typedArray = context.obtainStyledAttributes(attrs, sets)
         val artist = typedArray.getText(index0)
