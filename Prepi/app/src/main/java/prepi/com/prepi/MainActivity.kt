@@ -56,10 +56,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-
+//
+        setSupportActionBar(toolbar_main)
+//        supportActionBar?.setDisplayShowTitleEnabled(false)
         toolbar = supportActionBar!!
         toolbar.title = "Home"
+//        toolbar_main.title = "Produtos"
         openFragment(Home.newInstance())
 
         bottomNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
