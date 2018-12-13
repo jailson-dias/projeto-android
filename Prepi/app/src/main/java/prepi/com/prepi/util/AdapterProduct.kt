@@ -16,7 +16,7 @@ import android.os.AsyncTask
 import android.widget.ImageView
 
 
-class AdapterProduct (private val products: List<ProductItem>, private val context: Context): RecyclerView.Adapter<AdapterProduct.ViewHolderProduct>() {
+class AdapterProduct (private val products: List<ProductItem>, private val context: Context?): RecyclerView.Adapter<AdapterProduct.ViewHolderProduct>() {
 
     class ViewHolderProduct(itemView: View): RecyclerView.ViewHolder(itemView) {
         // utilizado para referenciar os campos do layout, para assim poderem ser alterados em onBindViewHolder
