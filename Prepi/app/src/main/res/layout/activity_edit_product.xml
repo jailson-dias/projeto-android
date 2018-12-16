@@ -54,6 +54,7 @@
                            android:layout_height="100dp"
                            android:src="@drawable/woman"
                            android:contentDescription="@string/app_name"
+                           android:scaleType="centerCrop"
                 />
                 <EditText android:layout_width="0dp"
                           android:hint="Escreva uma descrição para a peça no seu site…"

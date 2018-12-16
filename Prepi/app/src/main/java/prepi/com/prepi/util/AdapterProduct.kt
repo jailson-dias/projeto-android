@@ -16,6 +16,7 @@ import android.os.AsyncTask
 import android.widget.ImageView
 import android.content.Intent
 import prepi.com.prepi.EditProduct
+import prepi.com.prepi.Gallery
 
 
 class AdapterProduct (private val products: List<ProductItem>, private val context: Context?): RecyclerView.Adapter<AdapterProduct.ViewHolderProduct>() {
@@ -30,7 +31,7 @@ class AdapterProduct (private val products: List<ProductItem>, private val conte
         // utilizado para inflar o layout do itemlista para cada item da lista de RSSs
         val view = LayoutInflater.from(context).inflate(R.layout.card_product, parent, false)
         view.setOnClickListener {
-            val intent = Intent(context, EditProduct::class.java)
+            val intent = Intent(context, Gallery::class.java)
             context?.startActivity(intent)
         }
         return ViewHolderProduct(view)

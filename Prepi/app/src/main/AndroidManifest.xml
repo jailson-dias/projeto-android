@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools" package="prepi.com.prepi">
+          xmlns:tools="http://schemas.android.com/tools"
+          package="prepi.com.prepi">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
             android:allowBackup="true"
@@ -19,12 +21,15 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".EditProduct"
-                  android:windowSoftInputMode="adjustPan"
-                  android:parentActivityName=".MainActivity">
+        <activity
+                android:name=".EditProduct"
+                android:parentActivityName=".MainActivity"
+                android:windowSoftInputMode="adjustPan">
             <meta-data
                     android:name="android.support.PARENT_ACTIVITY"
-                    android:value="prepi.com.prepi.MainActivity" />
+                    android:value="prepi.com.prepi.MainActivity"/>
+        </activity>
+        <activity android:name=".Gallery">
         </activity>
     </application>
 

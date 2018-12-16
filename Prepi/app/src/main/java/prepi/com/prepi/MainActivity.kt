@@ -1,5 +1,6 @@
 package prepi.com.prepi
 
+import android.Manifest
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -17,6 +18,20 @@ import android.support.v7.app.ActionBar
 import android.support.v7.widget.LinearLayoutManager
 import android.widget.EditText
 import android.widget.LinearLayout
+import android.provider.MediaStore
+import android.provider.MediaStore.MediaColumns
+import android.app.Activity
+import android.content.Context
+import android.database.Cursor
+import android.net.Uri
+import android.Manifest.permission
+import android.Manifest.permission.WRITE_CALENDAR
+import android.content.DialogInterface
+import android.content.pm.PackageManager
+import android.support.v4.app.ActivityCompat
+import android.support.v4.content.ContextCompat
+import android.support.v7.app.AlertDialog
+import android.widget.Toast
 
 
 class MainActivity : AppCompatActivity() {

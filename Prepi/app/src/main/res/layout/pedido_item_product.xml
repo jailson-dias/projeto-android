@@ -4,8 +4,10 @@
              android:layout_height="200dp"
               android:orientation="horizontal">
 
-    <ImageView android:layout_width="80dp"
+    <ImageView android:id="@+id/img"
+            android:layout_width="80dp"
                android:layout_height="130dp"
+                android:scaleType="centerCrop"
                 android:src="@drawable/woman"/>
 
     <LinearLayout android:layout_width="0dp"
@@ -14,11 +16,13 @@
                   android:paddingLeft="8dp"
                   android:paddingRight="8dp"
                     android:orientation="vertical">
-        <TextView android:layout_width="match_parent"
+        <TextView android:id="@+id/title"
+                android:layout_width="match_parent"
                   android:layout_height="wrap_content"
                   android:text="Conjuntinho listrado - Stories"
         />
-        <TextView android:layout_width="match_parent"
+        <TextView  android:id="@+id/size"
+                android:layout_width="match_parent"
                   android:layout_height="wrap_content"
                   android:text="Tamanho P"
         />
