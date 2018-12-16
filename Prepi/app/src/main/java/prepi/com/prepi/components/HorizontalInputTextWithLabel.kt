@@ -21,14 +21,9 @@ class HorizontalInputTextWithLabel(context: Context?, attrs: AttributeSet?) :
     internal var label = 0
     @StyleableRes
     internal var placeholder = 1
-    @StyleableRes
-    internal var dropdown = 2
-    @StyleableRes
-    internal var dropdownItens = 3
 
     internal var labelTextView: TextView? = null
     internal var inputTextView: EditText? = null
-    internal var dropdownView: AppCompatSpinner? = null
 
     init {
         init(context, attrs)
@@ -40,31 +35,24 @@ class HorizontalInputTextWithLabel(context: Context?, attrs: AttributeSet?) :
         Log.i("Prepiappp", attrs.toString())
         val sets = intArrayOf(
             R.attr.label,
-            R.attr.placeholder,
-            R.attr.dropdown_value,
-            R.attr.dropdown_itens
+            R.attr.placeholder
         )
         val typedArray = context?.obtainStyledAttributes(attrs, sets)
         Log.i("Prepiappp", " valor do type array ")
         val labelText = typedArray?.getText(label)
         val inputView = typedArray?.getText(placeholder)
-        val dropdownValor = typedArray?.getBoolean(dropdown, false)
-        val dropdownItems = typedArray?.getResourceId(dropdownItens, R.array.dropdown_tipo_peca)
         typedArray?.recycle()
 
         initComponents()
 
         setLabel(labelText)
         setInputTextView(inputView)
-        setDropdown(dropdownValor, dropdownItems)
     }
 
     private fun initComponents() {
         labelTextView = findViewById(R.id.input_label) as TextView
 
         inputTextView = findViewById(R.id.input_text_editor) as EditText
-
-        dropdownView = findViewById(R.id.dropdown_peca) as AppCompatSpinner
     }
 
     fun getLabel(): CharSequence {
@@ -84,31 +72,6 @@ class HorizontalInputTextWithLabel(context: Context?, attrs: AttributeSet?) :
     fun setInputTextView(value: CharSequence?) {
         if (value != null) {
             inputTextView?.hint = value
-        }
-    }
-
-//    fun getDropdown(): EditText? {
-//        return inputTextView
-//    }
-
-    fun setDropdown(isDropdown: Boolean?, items: Int?) {
-        Log.i("Prepiappp", " dropDown" + isDropdown)
-        if (isDropdown != null && items != null && isDropdown) {
-            dropdownView?.visibility = View.VISIBLE
-            inputTextView?.visibility = View.GONE
-
-            val adapter = ArrayAdapter.createFromResource(
-                context,
-                items, android.R.layout.simple_spinner_item
-            )
-            // Specify the layout to use when the list of choices appears
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            // Apply the adapter to the spinner
-            dropdown_peca.setAdapter(adapter)
-
-        } else {
-            dropdownView?.visibility = View.GONE
-            inputTextView?.visibility = View.VISIBLE
         }
     }
 }

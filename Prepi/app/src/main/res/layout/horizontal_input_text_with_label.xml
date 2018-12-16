@@ -21,14 +21,4 @@
                       android:layout_weight="1"
                       style="@style/Prepi.Text.InputText"
             />
-
-            <android.support.v7.widget.AppCompatSpinner
-                    android:id="@+id/dropdown_peca"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent"
-                    android:spinnerMode="dropdown"
-            >
-
-            </android.support.v7.widget.AppCompatSpinner>
 </LinearLayout>

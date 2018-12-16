@@ -94,34 +94,49 @@
                     app:placeholder="R$ 0,00"
             />
 
-            <prepi.com.prepi.components.HorizontalInputTextWithLabel
+            <prepi.com.prepi.components.HorizontalSelectButton
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:label="Qual tipo de roupa é essa: "
-                    app:dropdown_value="true"
                     app:dropdown_itens="@array/dropdown_tipo_peca"
             />
 
-            <ImageView android:layout_width="200dp"
-                       android:layout_height="180dp"
-                       android:src="@drawable/woman"
-                       android:contentDescription="@string/app_name"
-            />
-            <ImageView android:layout_width="200dp"
-                       android:layout_height="180dp"
-                       android:src="@drawable/woman"
-                       android:contentDescription="@string/app_name"
-            />
-            <ImageView android:layout_width="200dp"
-                       android:layout_height="180dp"
-                       android:src="@drawable/woman"
-                       android:contentDescription="@string/app_name"
-            />
-            <ImageView android:layout_width="200dp"
-                       android:layout_height="180dp"
-                       android:src="@drawable/woman"
-                       android:contentDescription="@string/app_name"
-            />
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+            >
+                <Button
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:text="PP"
+                />
+                <Button
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:text="P"
+                />
+                <Button
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:text="M"
+                />
+                <Button
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:text="G"
+                />
+                <Button
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:text="GG"
+                />
+                <Button
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:text="U"
+                />
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 

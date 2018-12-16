@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="55dp"
+              android:background="@drawable/line_separator_edit_product"
+              android:orientation="horizontal">
+
+    <TextView
+            android:id="@+id/input_label"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Nome da peça: "
+            style="@style/Prepi.Text.Label"
+    />
+
+    <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/dropdown_peca"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:spinnerMode="dropdown"
+    >
+
+    </android.support.v7.widget.AppCompatSpinner>
+</LinearLayout>
