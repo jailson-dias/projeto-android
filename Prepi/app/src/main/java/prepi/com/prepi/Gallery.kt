@@ -21,8 +21,9 @@ import prepi.com.prepi.util.GalleryPhotoAdapter
 
 class Gallery : AppCompatActivity(), SharedPreferences.OnSharedPreferenceChangeListener {
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
-//        Log.i("prepiapp share", key)
+        Log.i("prepiapp share", key)
         val uri = sharedPreferences?.getString(key, "")
+        Log.i("Prepiappp share", uri)
         img_selected.setImageURI(Uri.parse(uri))
     }
 
@@ -46,6 +47,7 @@ class Gallery : AppCompatActivity(), SharedPreferences.OnSharedPreferenceChangeL
 
         proximo.setOnClickListener {
             val intent = Intent(applicationContext, EditProduct::class.java)
+            intent.putExtra("postar", true)
             applicationContext?.startActivity(intent)
         }
 
