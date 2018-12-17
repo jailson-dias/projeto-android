@@ -4,4 +4,4 @@ O aplicativo quando o usuário não estava interagindo com ele, estava consumido
 
 O que é possível de ser visto na imagem abaixo, quando a galeria é aberta o uso de CPU do aplicativo chega próximo de 50%
 
-![uso de CPU](https://github.com/jailson-dias/projeto-android/CPU.png)
+![uso de CPU](https://github.com/jailson-dias/projeto-android/blob/master/CPU.png)
