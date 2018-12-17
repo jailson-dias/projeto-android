@@ -73,10 +73,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 //
         setSupportActionBar(toolbar_main)
-//        supportActionBar?.setDisplayShowTitleEnabled(false)
         toolbar = supportActionBar!!
         toolbar.title = "Home"
-//        toolbar_main.title = "Produtos"
         openFragment(Home.newInstance())
 
         bottomNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)

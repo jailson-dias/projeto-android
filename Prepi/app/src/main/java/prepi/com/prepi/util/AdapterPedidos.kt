@@ -15,43 +15,40 @@ import android.graphics.BitmapFactory
 import android.os.AsyncTask
 import android.widget.ImageView
 import android.content.Intent
+import kotlinx.android.synthetic.main.pedido_item_product.view.*
 import prepi.com.prepi.EditProduct
 import prepi.com.prepi.Gallery
 
 
-class AdapterProduct (private val products: List<ProductItem>, private val context: Context?): RecyclerView.Adapter<AdapterProduct.ViewHolderProduct>() {
+class AdapterPedidos(private val products: List<PedidoItem>, private val context: Context?): RecyclerView.Adapter<AdapterPedidos.ViewHolderPedidos>() {
 
-    class ViewHolderProduct(itemView: View): RecyclerView.ViewHolder(itemView) {
+    class ViewHolderPedidos(itemView: View): RecyclerView.ViewHolder(itemView) {
         // utilizado para referenciar os campos do layout, para assim poderem ser alterados em onBindViewHolder
-        val title = itemView.product_name
-        val price = itemView.product_price
-        val picture = itemView.product_picture
+        val title = itemView.title
+        val size = itemView.size
+        val picture = itemView.img
     }
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderProduct {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderPedidos {
         // utilizado para inflar o layout do itemlista para cada item da lista de RSSs
-        val view = LayoutInflater.from(context).inflate(R.layout.card_product, parent, false)
+        val view = LayoutInflater.from(context).inflate(R.layout.pedido_item_product, parent, false)
         view.setOnClickListener {
             val intent = Intent(context, EditProduct::class.java)
             context?.startActivity(intent)
         }
-        return ViewHolderProduct(view)
+        return ViewHolderPedidos(view)
     }
 
     override fun getItemCount(): Int {
         return products.size
     }
 
-    override fun onBindViewHolder(holder: ViewHolderProduct, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolderPedidos, position: Int) {
         val product = products[position]
         holder.title.text = product.title
 
-        Log.i("Prepiappp", product.title)
-        val formatNumber = DecimalFormat("R$ #,##")
-        formatNumber.roundingMode = RoundingMode.CEILING
-
-        holder.price.text = formatNumber.format(product.value)
+        holder.size.text = ("Tamanho: " + product.size)
         DownloadImageTask(holder.picture).execute(product.picture)
-        
+
     }
 
     private inner class DownloadImageTask(internal var bmImage: ImageView) : AsyncTask<String, Void, Bitmap>() {
@@ -64,6 +61,7 @@ class AdapterProduct (private val products: List<ProductItem>, private val conte
                 mIcon11 = BitmapFactory.decodeStream(`in`)
             } catch (e: Exception) {
                 Log.e("Error", e.message)
+//                e.printStackTrace()
                 mIcon11 = null
             }
 

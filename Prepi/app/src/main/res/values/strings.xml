@@ -1,15 +1,12 @@
 <resources>
     <string name="app_name">Prepi</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="token">eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhY2Nlc3MiOiJTdG9yZSIsImV4cGlyYXRpb24iOiIyMDE5LTAxLTE2VDAzOjQxOjI1LjIyNVoiLCJfaWQiOiI1YmJmNmVmNGE5MjBjOTAwNGUzZDE4OTgifQ.zb4OJWHLPqC2NKEkoAwM9bUR-D981trnsvtcMlwHwIQ</string>
+    <string name="serve">https://api.prepi.com.br</string>
+    <string name="store_id">5bbf6ef4a920c9004e3d1898</string>
 
     <string-array name="dropdown_tipo_peca">
-        <item>Cappuccino</item>
-        <item>Espresso</item>
-        <item>Mocha</item>
-        <item>Caffè Americano</item>
-        <item>Cafe Zorro</item>
+        <item>Alfabetico</item>
+        <item>Númerico</item>
     </string-array>
 
 </resources>

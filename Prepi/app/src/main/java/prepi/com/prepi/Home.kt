@@ -1,15 +1,19 @@
 package prepi.com.prepi
 
-import android.content.Context
-import android.net.Uri
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.GridLayoutManager
-import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import com.android.volley.Request
+import com.android.volley.Response
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_home.view.*
 import prepi.com.prepi.util.AdapterProduct
 import prepi.com.prepi.util.ParseProduct
 
@@ -403,20 +407,42 @@ class Home : Fragment() {
 
         val rootView = inflater.inflate(R.layout.fragment_home, container, false)
 
+        rootView.fab.setOnClickListener {
+            val intent = Intent(context, Gallery::class.java)
+            context?.startActivity(intent)
+//            Toast.makeText(context, "Teste", Toast.LENGTH_SHORT).show()
+        }
+
         return rootView
 
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val prods = ParseProduct(products).getListProducts()
+        requestProducts()
+    }
 
-        recyclerProducts.apply {
-            //         colocando para o recycle view utilizar o layout do linearlayoutmanager
-            layoutManager = GridLayoutManager(activity?.applicationContext, 2)
-            adapter = AdapterProduct(prods, activity?.applicationContext)
-        }
+    fun requestProducts() {
+        val queue = Volley.newRequestQueue(context)
+        val url = getString(R.string.serve) + "/stores/products/" + getString(R.string.store_id)
 
+        val stringRequest = StringRequest(
+            Request.Method.GET, url,
+            Response.Listener<String> { response ->
+                val prods = ParseProduct(response).getListProducts()
+
+                recyclerProducts.apply {
+                    //         colocando para o recycle view utilizar o layout do linearlayoutmanager
+                    layoutManager = GridLayoutManager(activity?.applicationContext, 2)
+                    adapter = AdapterProduct(prods, activity?.applicationContext)
+                }
+            },
+            Response.ErrorListener {
+                Toast.makeText(context, "Erro em pegar os produtos do servidor", Toast.LENGTH_SHORT).show()
+            })
+
+// Add the request to the RequestQueue.
+        queue.add(stringRequest)
     }
 
     companion object {
