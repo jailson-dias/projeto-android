@@ -46,8 +46,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:itemIconTint="#fc0c4c"
-            app:itemTextColor="#fc0c4c"
+            app:itemIconTint="#FE5175"
+            app:itemTextColor="#FE5175"
             app:menu="@menu/navigation"/>
 
 
